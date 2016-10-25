@@ -1,0 +1,35 @@
+{
+  "name": "muyun",
+  "version": "1.0.0",
+  "description": "Time-based crypto/decrypt module for ...",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "BABEL_ENV=test mocha --compilers js:babel-register",
+    "prepublish": "npm run dist && npm test",
+    "dist": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbinlin/node-muyun.git"
+  },
+  "author": "zbinlin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zbinlin/node-muyun/issues"
+  },
+  "homepage": "https://github.com/zbinlin/node-muyun#readme",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.11.6"
+  }
+}
