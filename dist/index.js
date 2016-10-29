@@ -6,6 +6,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var _regeneratorRuntime = _interopDefault(require('babel-runtime/regenerator'));
 var crypto = require('crypto');
+var util = require('util');
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -304,12 +305,13 @@ function wrapStream(stream) {
  * @param {number} offset
  * @return {number}
  */
-function calcPasswordFrom(timestamp, interval, offset) {
+function getSameValueFromTimeInterval(timestamp, interval, offset) {
     if (timestamp instanceof Date) {
         timestamp = Math.floor(timestamp.getTime() / 1000);
     }
     return Math.floor((timestamp - offset) / interval) * (interval - offset);
 }
+var calcPasswordFrom = util.deprecate(getSameValueFromTimeInterval, "calcPasswordFrom was deprecated, please use getSameValueFromTimeInterval instaead.");
 
 /**
  * @param {string} str
@@ -389,6 +391,7 @@ var decrypt = function () {
 }();
 
 exports.getTimeOffsetBy = getTimeOffsetBy;
+exports.getSameValueFromTimeInterval = getSameValueFromTimeInterval;
 exports.calcPasswordFrom = calcPasswordFrom;
 exports.encrypt = encrypt;
 exports.decrypt = decrypt;
