@@ -1,6 +1,7 @@
 "use strict";
 
 import * as crypto from "crypto";
+import * as util from "util";
 
 const ALG_C = "aes192";
 
@@ -60,12 +61,13 @@ export function getTimeOffsetBy(interval, timestamp = Date.now()) {
  * @param {number} offset
  * @return {number}
  */
-export function calcPasswordFrom(timestamp, interval, offset) {
+export function getSameValueFromTimeInterval(timestamp, interval, offset) {
     if (timestamp instanceof Date) {
         timestamp = Math.floor(timestamp.getTime() / 1000);
     }
     return Math.floor((timestamp - offset) / interval) * (interval - offset);
 }
+export const calcPasswordFrom = util.deprecate(getSameValueFromTimeInterval, "calcPasswordFrom was deprecated, please use getSameValueFromTimeInterval instaead.");
 
 /**
  * @param {string} str

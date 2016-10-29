@@ -23,6 +23,21 @@ describe("Test getTimeOffsetBy function", () => {
     });
 });
 
+describe("Test getSameValueFromTimeInterval function", () => {
+    it("", () => {
+        const timeStart = Math.floor(Date.now() / 1000);
+        const interval = 60;
+        const offset = timeStart % interval;
+        const fn = ((interval, offset) =>
+            time => muyun.calcPasswordFrom(time, interval, offset))(interval, offset);
+        const base = fn(timeStart);
+        expect(fn(timeStart + 1)).to.equal(base);
+        expect(fn(timeStart + interval - 1)).to.equal(base);
+        expect(fn(timeStart - 1)).to.not.equal(base);
+        expect(fn(timeStart + interval)).to.not.equal(base);
+    });
+});
+
 describe("Test calcPasswordFrom function", () => {
     it("", () => {
         const timeStart = Math.floor(Date.now() / 1000);
