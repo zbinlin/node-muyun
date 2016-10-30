@@ -62,12 +62,28 @@ describe("Test cipher function", () => {
         const result = await muyun.encrypt(text, phrase, salt);
         expect(result.equals(expected)).to.be.true;
     });
+    it("", async () => {
+        const text = "Hello, world!";
+        const phrase = Buffer.from("password");
+        const salt = 123456;
+        const expected = Buffer.from("e424f5d40f311f79e1fd959500bfe867", "hex");
+        const result = await muyun.encrypt(text, phrase, salt);
+        expect(result.equals(expected)).to.be.true;
+    });
 });
 
 describe("Test decipher function", () => {
     it("", async () => {
         const buf = Buffer.from("e424f5d40f311f79e1fd959500bfe867", "hex");
         const phrase = "password";
+        const salt = 123456;
+        const expected = "Hello, world!";
+        const result = await muyun.decrypt(buf, phrase, salt);
+        expect(result).to.be.equal(expected);
+    });
+    it("", async () => {
+        const buf = Buffer.from("e424f5d40f311f79e1fd959500bfe867", "hex");
+        const phrase = Buffer.from("password");
         const salt = 123456;
         const expected = "Hello, world!";
         const result = await muyun.decrypt(buf, phrase, salt);

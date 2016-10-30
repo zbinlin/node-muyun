@@ -29,7 +29,7 @@ function wrapStream(stream) {
 }
 
 /**
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @param {string}
  */
@@ -71,7 +71,7 @@ export const calcPasswordFrom = util.deprecate(getSameValueFromTimeInterval, "ca
 
 /**
  * @param {string} str
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @return {Buffer}
  */
@@ -83,7 +83,7 @@ export async function encrypt(str, phrase, salt) {
 
 /**
  * @param {Buffer} buffer
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @return {string}
  */
