@@ -226,7 +226,7 @@ var set = function set(object, property, value, receiver) {
 };
 
 /**
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @param {string}
  */
@@ -315,7 +315,7 @@ var calcPasswordFrom = util.deprecate(getSameValueFromTimeInterval, "calcPasswor
 
 /**
  * @param {string} str
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @return {Buffer}
  */
@@ -353,7 +353,7 @@ var encrypt = function () {
 
 /**
  * @param {Buffer} buffer
- * @param {string} phrase
+ * @param {string|Buffer} phrase
  * @param {string} salt
  * @return {string}
  */
