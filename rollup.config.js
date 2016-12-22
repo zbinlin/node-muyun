@@ -9,24 +9,6 @@ export default {
     moduleName: "muyun",
     sourceMap: true,
     plugins: [
-        babel({
-            presets: [
-                [
-                    "latest", {
-                        es2015: false,
-                    },
-                ],
-                "es2015-rollup",
-            ],
-            plugins: [
-                [
-                    "transform-runtime", {
-                        helpers: false,
-                        polyfill: false,
-                        regenerator: true,
-                    },
-                ],
-            ],
-        }),
+        babel(),
     ],
 };

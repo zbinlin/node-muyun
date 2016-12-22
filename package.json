@@ -20,8 +20,7 @@
   "homepage": "https://github.com/zbinlin/node-muyun#readme",
   "devDependencies": {
     "babel-core": "^6.17.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.16.3",
     "chai": "^3.5.0",
@@ -29,7 +28,5 @@
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1"
   },
-  "dependencies": {
-    "babel-runtime": "^6.11.6"
-  }
+  "dependencies": {}
 }

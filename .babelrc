@@ -1,16 +1,16 @@
 {
     "env": {
         "test": {
-            "presets": ["latest"],
             "plugins": [
-                [
-                    "transform-runtime", {
-                        "helpers": false,
-                        "polyfill": false,
-                        "regenerator": true
-                    }
-                ]
+                "transform-es2015-modules-commonjs"
             ]
         }
-    }
+    },
+    "presets": [
+        [
+            "latest", {
+                "es2015": false
+            }
+        ]
+    ]
 }
