@@ -1,6 +1,6 @@
 {
   "name": "muyun",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Time-based crypto/decrypt module for ...",
   "main": "dist/index.js",
   "scripts": {
